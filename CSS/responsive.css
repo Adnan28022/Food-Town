@@ -1,0 +1,151 @@
+/*-----------------------------------*\
+    For tablets or smaller desktops (width < 1024px)
+\*-----------------------------------*/
+
+@media (max-width: 980px) {
+  header {
+    padding: 12px 20px;
+  }
+
+  .home .hero {
+    position: absolute;
+    left: 20px;
+  }
+
+  .home .media-icons {
+    right: 15px;
+  }
+
+  header .navigation {
+    display: none;
+  }
+
+  header .navigation.active {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(1, 1, 1, 0.7);
+  }
+
+  header .navigation .navigation-items a {
+    font-size: 1.3em;
+    margin: 20px;
+  }
+
+  header .navigation .navigation-items a::before {
+    height: 5px;
+  }
+
+  header .navigation.active .navigation-items {
+    width: 600px;
+    max-width: 600px;
+    margin: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 5px 25px rgba(1 1 1/ 20%);
+  }
+
+  .menu-btn {
+    background: url(../Images/toggler.png) no-repeat;
+    background-size: 40px;
+    background-position: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  .menu-btn.active {
+    z-index: 999;
+    background: url(../Images/close-removebg-preview.png) no-repeat;
+    background-size: 25px;
+    background-position: center;
+    transition: 0.3s ease;
+  }
+
+}
+
+@media (max-width: 890px) {
+  .brand {
+    right: -10px;
+    bottom: -20px;
+  }
+
+  .brand img {
+    width: 240px;
+  }
+
+  .content {
+    margin-block: 20px;
+  }
+
+  main {
+    width: 800px;
+    margin-inline: 7%;
+  }
+}
+
+/*-----------------------------------*\
+For landscape phones and smaller tablets (width < 768px) 
+\*-----------------------------------*/
+
+@media (max-width: 768px) {
+  .services .card {
+    margin-block: 10px;
+  }
+
+  .image-area img {
+    display: none !important;
+  }
+}
+
+@media (max-width: 550px) {
+  .home .hero h1 {
+    font-size: 3rem !important;
+  }
+
+  .home .hero p {
+    font-size: 1.5rem !important;
+  }
+
+
+  .hero {
+    top: 60%;
+    height: 100px;
+    z-index: 5;
+  }
+
+  .home .hero {
+    position: absolute;
+    top: 10%;
+  }
+
+  .hero img {
+    width: 100px;
+  }
+}
+
+/*-----------------------------------*\
+ For portrait phones (width < 480px)  
+\*-----------------------------------*/
+
+@media (max-width: 450px) {
+  .home .hero {
+    position: absolute;
+    top: 25%;
+  }
+
+  .slider-navigation {
+    position: absolute;
+    top: 62%;
+    margin-inline: 24%;
+  }
+}

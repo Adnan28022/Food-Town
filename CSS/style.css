@@ -1,0 +1,1031 @@
+/*-----------------------------------*\
+  #index.css
+
+    Website Name: Food Town
+
+
+
+1. Custom Property
+    1.1. Roots Colors
+2. Set Tags
+    2.1. Scroll Bar
+3. Typography
+    3.1. h1
+    3.2. Dot
+    3.3. h2
+4. Linked Pages Hero Sections
+    4.1. About Page
+    4.2. Services Page
+    4.3. Chef Page
+    4.4. Menu Page
+    4.5. Contact Page
+5. Preloader
+6. Navbar
+    6.1. Header
+    6.2. Hero Section
+    6.3. Button Animation
+    6.4. Hero Section Slider
+7. Services
+8. About
+9. Special Dish
+10. Menu
+11. Testimonial
+12. Our Team
+13. Reservation
+14. Contact us
+15. Footer
+
+\*-----------------------------------*/
+
+/*-----------------------------------*\
+  1. CUSTOM PROPERTY
+\*-----------------------------------*/
+:root {
+  /**
+  * Colors
+  */
+  --loader-color: #1b1d21;
+  --gold-crayola: hsl(38, 61%, 73%);
+  --quick-silver: hsla(0, 0%, 65%, 1);
+  --davys-grey: hsla(30, 3%, 34%, 1);
+  --eerie-black-1: hsla(210, 4%, 9%, 1);
+  --eerie-black-2: hsla(210, 4%, 11%, 1);
+  --eerie-black-3: hsla(180, 2%, 8%, 1);
+  --eerie-black-4: hsla(0, 0%, 13%, 1);
+  --white: hsla(0, 0%, 100%, 1);
+  --white-alpha-20: hsla(0, 0%, 100%, 0.2);
+  --white-alpha-10: hsla(0, 0%, 100%, 0.1);
+  --black: hsla(0, 0%, 0%, 1);
+  --black-alpha-80: hsla(0, 0%, 0%, 0.8);
+  --black-alpha-15: hsla(0, 0%, 0%, 0.15);
+
+
+  /**
+  * Typography
+  */
+  /* Font FAMILY */
+  --fontFamily-forum: 'Forum', cursive;
+  --fontFamily-dm_sans: 'DM Sans', sans-serif;
+  --fontFamily-dancing: 'Dancing Script', cursive;
+
+  /* FONT SIZE */
+  --fontSize-body-1: 2.4rem;
+  --fontSize-body-2: 1.6rem;
+  --fontSize-body-3: 1.8rem;
+  --fontSize-body-4: 1.6rem;
+  --fontSize-label-1: 1.4rem;
+  --fontSize-label-2: 1.2rem;
+}
+
+/*-----------------------------------*\
+ 2. Reset
+\*-----------------------------------*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a,
+img,
+data,
+span,
+input.button,
+select,
+i,
+textarea {
+  display: block;
+}
+
+a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+img {
+  height: auto;
+}
+
+input,
+button,
+select,
+textarea {
+  background: none;
+  border: none;
+  font: inherit;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+#body {
+  background-color: var(--eerie-black-1);
+  color: var(--white);
+  font-family: var(--fontFamily-dm_sans);
+  font-size: var(--fontSize-body-4);
+  font-weight: 400;
+  line-height: 1.85em;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--gold-crayola);
+}
+
+/*-----------------------------------*\
+  3. TYPOGRAPHY
+\*-----------------------------------*/
+h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 5rem !important;
+  background: linear-gradient(135deg, #ff8a00, #e52e71);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: bolder;
+}
+
+.dot {
+  margin-block: 60px;
+  font-size: 5em !important;
+}
+
+.dotLink {
+  margin-top: 60px;
+  font-size: 5em !important;
+}
+
+.dot2 {
+  text-align: center !important;
+  margin-block: 40px;
+  font-size: 4em !important;
+}
+
+h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 4rem !important;
+  background: linear-gradient(135deg, #3fa12e, #6457c2);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/*-----------------------------------*\
+  4. Linked Page Hero Section
+\*-----------------------------------*/
+.aboutlinkPage {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0)),
+    url('../Images/about-us.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  min-height: 85vh;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.servicelinkPage {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0)),
+    url('../Images/our services.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  min-height: 85vh;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cheflinkPage {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0)),
+    url('../Images/ourchefs.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  min-height: 85vh;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menulinkPage {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0)),
+    url('../Images/ourmenu.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  min-height: 85vh;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contactlinkPage {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0)),
+    url('../Images/contact\ us.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  min-height: 85vh;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.breadcrumb-item {
+  color: var(--gold-crayola);
+  font-size: 25px;
+  font-weight: bold;
+  font-family: 'Dancing Script', sans-serif;
+}
+
+/*-----------------------------------*\
+ 5. PRELOAD
+\*-----------------------------------*/
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--eerie-black-1);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.loader.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--eerie-black-1);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*-----------------------------------*\
+ 6. NAVBAR
+\*-----------------------------------*/
+header {
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 100px;
+  transition: 0.5s ease;
+}
+
+#navbar {
+  height: 15vh;
+}
+
+.fixed-navbar {
+  position: fixed;
+  top: 0;
+}
+
+header .navigation .navigation-items {
+  display: flex;
+}
+
+header .brand {
+  color: var(--white);
+  font-size: 1.5em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+header .navigation {
+  position: relative;
+}
+
+header .navigation .navigation-items a {
+  position: relative;
+  color: var(white);
+  font-size: 1em;
+  font-weight: 500;
+  margin-left: 30px;
+  transition: 0.3s ease;
+}
+
+header .navigation .navigation-items a:before {
+  content: '';
+  position: absolute;
+  background: var(--gold-crayola);
+  width: 0%;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  transition: all ease 0.3s;
+}
+
+header .navigation .navigation-items a:hover:before,
+header .navigation .navigation-items a.active::before {
+  width: 100%;
+}
+
+header .navigation .navigation-items a:hover,
+header .navigation .navigation-items a.active {
+  color: var(--gold-crayola) !important;
+
+}
+
+/* section {
+  padding: 100px 200px;
+} */
+
+.home {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--eerie-black-1);
+}
+
+.home .hero {
+  z-index: 888;
+  width: 50%;
+  margin-top: 40px;
+  position: absolute;
+  left: 110px;
+  display: none;
+}
+
+.home .hero.active {
+  display: block;
+  transition: all ease 2s;
+}
+
+.home .hero h1 {
+  font-size: 4em !important;
+  font-weight: bolder;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-bottom: 20px;
+}
+
+.home .hero p {
+  animation: herop 2s ease-in-out;
+  font-size: 2rem !important;
+}
+
+.btn {
+  font-size: 15px;
+  padding: 0.7em 2.7em;
+  letter-spacing: 0.06em;
+  position: relative;
+  font-family: inherit;
+  border-radius: 0.6em;
+  overflow: hidden;
+  transition: all 0.3s;
+  line-height: 1.4em;
+  border: 2px solid var(--white);
+  color: var(--white) !important;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  color: var(--gold-crayola) !important;
+  border: 2px solid var(--gold-crayola);
+  box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.6), 0 0 9px 3px rgba(27, 253, 156, 0.2);
+}
+
+.btn:before {
+  content: "";
+  position: absolute;
+  left: -4em;
+  width: 4em;
+  height: 100%;
+  top: 0;
+  transition: transform .4s ease-in-out;
+  background: linear-gradient(to right, transparent 1%, rgba(27, 253, 156, 0.1) 40%, rgba(27, 253, 156, 0.1) 60%, transparent 100%);
+}
+
+.btn:hover:before {
+  transform: translateX(15em);
+}
+
+.hero p {
+  margin-bottom: 35px;
+}
+
+.home .media-icons {
+  z-index: 888;
+  position: absolute;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s ease;
+}
+
+.home .media-icons a {
+  font-size: 1.6em;
+  transition: 0.3s ease;
+}
+
+.home .media-icons a:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.home .media-icons a:hover {
+  transform: scale(1.3);
+  color: var(--gold-crayola) !important;
+}
+
+.home img {
+  z-index: 000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home::before {
+  z-index: 777;
+  content: '';
+  position: absolute;
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.slider-navigation {
+  z-index: 888;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(220px);
+  margin-bottom: 0px;
+}
+
+.slider-navigation .nav-btn {
+  height: 15px;
+  width: 15px;
+  border: 2px var(--gold-crayola);
+  border-radius: 0px;
+  transform: rotate(45deg);
+  cursor: pointer;
+  box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+  transition: 0.3s ease;
+}
+
+.slider-navigation .nav-btn:hover {
+  background-color: var(--gold-crayola);
+  transform: scale(1.6);
+}
+
+.slider-navigation .nav-btn.active {
+  background-color: var(--gold-crayola);
+  transform: scale(1.6);
+  animation: rotate 5s linear infinite;
+  box-shadow: 0 0 20px var(--gold-crayola);
+}
+
+.slider-navigation .nav-btn:not(:last-child) {
+  margin-right: 15px;
+}
+
+.slider-navigation .nav-btn:hover {
+  transform: scale(1.2);
+}
+
+.image-slide {
+  position: absolute;
+  width: 100%;
+  clip-path: circle(0% at 0 50%);
+}
+
+.image-slide.active {
+  clip-path: circle(150% at 0 50%);
+  transition: 2s ease;
+  transition-property: clip-path;
+}
+
+/*-----------------------------------*\
+ 7. SERVICE
+\*-----------------------------------*/
+.services .card {
+  text-align: center;
+  border: none;
+  border: 1px solid var(--davys-grey);
+  background: transparent;
+  transition: .25s all ease;
+  width: 100% !important;
+}
+
+.card .icon img {
+  height: 100px;
+  width: 100px;
+}
+
+/*-----------------------------------*\
+ 8. ABOUT
+\*-----------------------------------*/
+.content {
+  width: 100%;
+}
+
+.content h2 {
+  font-size: 38px;
+}
+
+.content p {
+  margin-bottom: 40px;
+  font-size: 24px;
+  line-height: 1.5;
+  color: var(--davys-grey);
+}
+
+.about-image {
+  width: 100%;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/*-----------------------------------*\
+ 9. SPECIAL DISH
+\*-----------------------------------*/
+
+.dish-card {
+  background-color: var(--eerie-black-1) !important;
+  border: none;
+  color: #fff;
+  border-radius: 25px !important;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: cardSlideUp 0.8s ease-in-out;
+  padding-bottom: 20px;
+  border: 1px solid var(--davys-grey) !important;
+  overflow: hidden;
+  margin-block: 10px;
+}
+
+.dish-card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.dish-img {
+  border-radius: 25px 25px 0 0 !important;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.4s ease-in-out;
+}
+
+.dish-card:hover .dish-img {
+  transform: scale(1.1);
+  overflow: hidden;
+}
+
+.card-title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.card-text {
+  margin-bottom: 1.5rem;
+  height: 55px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-body h2 {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+.card-body p {
+  font-size: 1.2em !important;
+}
+
+.card-img-container {
+  overflow: hidden;
+}
+
+/*-----------------------------------*\
+  10. MENU
+\*-----------------------------------*/
+
+/*-----------------------------------*\
+  11. TESTIMONIALS
+\*-----------------------------------*/
+.card {
+  border: 1px solid var(--gold-crayola);
+  border-radius: 20px;
+}
+
+.card:hover {
+  transform: translateY(0);
+}
+
+.card-content .img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  margin-bottom: 20px;
+}
+
+.card-title {
+  color: var(--gold-crayola);
+}
+
+.card-profession {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.carousel-indicators {
+  left: 0;
+  top: auto;
+  bottom: -70px;
+}
+
+/*-----------------------------------*\
+ 12. Our Team
+\*-----------------------------------*/
+
+
+.team-box {
+  width: 100%;
+  padding: 20px;
+  user-select: none;
+}
+
+.t-b-img {
+  width: 100%;
+  height: 350px;
+  position: relative;
+}
+
+.t-b-img::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(22, 23, 24) 100%) !important;
+}
+
+.t-b-img img {
+  width: 100%;
+  height: 350px !important;
+  object-fit: contain;
+  object-position: bottom;
+  filter: grayscale(1);
+}
+
+.t-b-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.t-b-text strong {
+  font-weight: 700;
+}
+
+.t-b-text span {
+  color: #919191;
+}
+
+.team-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.team-social a {
+  margin: 0 10px;
+  transition: .5s ease;
+}
+
+.team-social a:hover {
+  color: var(--gold-crayola) !important;
+  transform: scale(1.3);
+}
+
+.swiper {
+  max-width: 745px;
+  max-width: 100%;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  width: 300px !important;
+  opacity: 0.2;
+}
+
+.swiper-slide-active {
+  opacity: 1;
+  border: 5px solid var(--gold-crayola);
+}
+
+/*-----------------------------------*\
+  13. Reservation
+\*-----------------------------------*/
+.form-control,
+.form-select {
+  border: none !important;
+  padding: 5px;
+  background-color: var(--eerie-black-1) !important;
+  color: var(--white) !important;
+  border-bottom: 1px solid var(--gold-crayola) !important;
+  font-size: var(--fontSize-label-1) !important;
+}
+
+.form-control::placeholder {
+  color: var(--white) !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: var(--eerie-black-1) !important;
+  border-bottom: var(--gold-crayola) !important;
+  box-shadow: none !important;
+  color: var(--white) !important;
+}
+
+label {
+  color: var(--gold-crayola);
+  font-size: 1.5em !important;
+  font-family: 'Dancing Script';
+  letter-spacing: 1px;
+  margin-top: 20px;
+}
+
+/*-----------------------------------*\
+  14. Contact us
+\*-----------------------------------*/
+#contact {
+  border: 1px solid var(--gold-crayola);
+  /* padding: 50px 0; */
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border-radius: 20px;
+}
+
+.form-area {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-evenly;
+  padding-inline: 40px !important;
+}
+
+.form-control {
+  background-color: transparent;
+  border: 1px solid #444;
+  color: #fff;
+  transition: 0.3s;
+  padding-left: 40px;
+}
+
+.form-control:focus {
+  border-color: #f0c929;
+  box-shadow: none;
+  background-color: #111;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+/*-----------------------------------*\
+  15. Footer
+\*-----------------------------------*/
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+.footer-section {
+  background: #151414;
+  position: relative;
+}
+
+.footer-cta {
+  border-bottom: 1px solid #373636;
+}
+
+.single-cta i {
+  color: var(--gold-crayola);
+  font-size: 30px;
+  float: left;
+  margin-top: 8px;
+}
+
+.cta-text {
+  padding-left: 15px;
+  display: inline-block;
+}
+
+.cta-text h4 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.cta-text span {
+  color: #757575;
+  font-size: 15px;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 2;
+}
+
+.footer-pattern img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 330px;
+  background-size: cover;
+  background-position: 100% 100%;
+}
+
+.footer-logo {
+  margin-bottom: 30px;
+}
+
+.footer-logo img {
+  max-width: 200px;
+}
+
+.footer-text p {
+  margin-bottom: 14px;
+  font-size: 14px;
+  color: #7e7e7e;
+  line-height: 28px;
+}
+
+.folow {
+  color: #fff;
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px;
+}
+
+.footer-social-icon a {
+  color: #fff;
+  font-size: 16px;
+  margin-right: 15px;
+}
+
+.footer-social-icon i {
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 38px;
+  border-radius: 50%;
+}
+
+.facebook-bg {
+  background: #3B5998;
+}
+
+.twitter-bg {
+  background: #55ACEE;
+}
+
+.google-bg {
+  background: #DD4B39;
+}
+
+.footer-widget-heading h3 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.footer-widget-heading h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  height: 2px;
+  width: 50px;
+  background: var(--gold-crayola);
+}
+
+.footer-widget ul li {
+  float: left;
+  width: 50%;
+  margin-bottom: 12px;
+}
+
+.footer-widget ul li a:hover {
+  color: var(--gold-crayola);
+}
+
+.footer-widget ul li a {
+  color: #878787;
+  text-transform: capitalize;
+}
+
+.subscribe-form {
+  position: relative;
+  overflow: hidden;
+}
+
+.subscribe-form input {
+  width: 100%;
+  padding: 14px 28px;
+  background: #2E2E2E;
+  border: 1px solid #2E2E2E;
+  color: #fff;
+}
+
+.subscribe-form button {
+  position: absolute;
+  right: 0;
+  background: var(--gold-crayola);
+  padding: 13px 20px;
+  border: 1px solid var(--gold-crayola);
+  top: 0;
+}
+
+.subscribe-form button i {
+  color: #fff;
+  font-size: 2em;
+  transform: rotate(-6deg);
+}
+
+.copyright-area {
+  background: #202020;
+  padding: 10px 0;
+}
+
+.copyright-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #878787;
+  color: var(--gold-crayola);
+  text-align: center;
+}
